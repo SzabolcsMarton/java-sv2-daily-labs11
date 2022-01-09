@@ -27,6 +27,17 @@ public class Lottery {
 
     }
 
+    private int getNewNumber(Random random){
+        return random.nextInt(1,numberOfRounds + 1);
+
+    }
+
+    private boolean checkIfExist(List<Integer> numbers, Integer randomNr){
+        return numbers.contains(randomNr);
+    }
+
+
+
     public int getNumberOfRounds() {
         return numberOfRounds;
     }
