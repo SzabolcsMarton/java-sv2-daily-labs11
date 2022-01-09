@@ -20,11 +20,8 @@ public class User {
             basket.add(itemCopy);
             money -= itemCopy.getPrice();
             itemCopy.buy();
-            if (itemCopy instanceof Product) {
-                if (getMoney() >= itemCopy.getPrice() * 3) {
-                    itemCopy.setPrice(itemCopy.getPrice() * 1.1);
-                    itemCopy.setExpirationDate(LocalDate.now().plusYears(3));
-                }
+            if (getMoney() >= itemCopy.getPrice() * 3) {
+                itemCopy.ExtendExpirationDate();
             }
         }
     }

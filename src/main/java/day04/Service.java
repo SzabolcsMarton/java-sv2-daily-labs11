@@ -7,10 +7,9 @@ public class Service implements WebshopItem{
     private double price;
     private LocalDate expirationDate;
 
-    public Service(String name, double price, LocalDate expirationDate) {
+    public Service(String name, double price) {
         this.name = name;
         this.price = price;
-        this.expirationDate = expirationDate;
     }
 
     @Override
@@ -29,8 +28,13 @@ public class Service implements WebshopItem{
     }
 
     @Override
+    public void ExtendExpirationDate() {
+
+    }
+
+    @Override
     public WebshopItem copy() {
-        return new Service(name,price,expirationDate);
+        return new Service(name,price);
     }
 
     @Override

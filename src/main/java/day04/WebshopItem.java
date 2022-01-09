@@ -11,4 +11,5 @@ public interface WebshopItem {
     void buy();
     void setPrice(double newPrice);
     void setExpirationDate(LocalDate newDate);
+    void ExtendExpirationDate();
 }
