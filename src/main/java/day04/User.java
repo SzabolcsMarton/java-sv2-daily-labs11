@@ -15,15 +15,9 @@ public class User {
     }
 
     public void buyItem(WebshopItem webshopItem) {
-        if (getMoney() >= webshopItem.getPrice()) {
-            WebshopItem itemCopy = webshopItem.copy();
-            basket.add(itemCopy);
-            money -= itemCopy.getPrice();
-            itemCopy.buy();
-            if (getMoney() >= itemCopy.getPrice() * 3) {
-                itemCopy.ExtendExpirationDate();
-            }
-        }
+            basket.add(webshopItem);
+            money -= webshopItem.getPrice();
+
     }
 
     public String getUserName() {

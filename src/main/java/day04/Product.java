@@ -50,9 +50,4 @@ public class Product implements WebshopItem{
         this.expirationDate = newDate;
     }
 
-    @Override
-    public void ExtendExpirationDate() {
-        this.setPrice(this.getPrice() * 1.1);
-        this.setExpirationDate(LocalDate.now().plusYears(3));
-    }
 }

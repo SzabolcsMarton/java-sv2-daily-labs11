@@ -1,5 +1,6 @@
 package day04;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Webshop {
@@ -32,7 +33,17 @@ public class Webshop {
         if(item == null)
             throw new IllegalArgumentException("Item not found");
 
-        user.buyItem(item);
+        if (user.getMoney() >= item.getPrice()) {
+            WebshopItem itemCopy = item.copy();
+            itemCopy.buy();
+            if (user.getMoney() >= itemCopy.getPrice() * 3) {
+                itemCopy.setPrice(itemCopy.getPrice() * 1.1);
+                itemCopy.setExpirationDate(LocalDate.now().plusYears(3));
+            }
+
+            user.buyItem(item);
+        }
+
     }
 
     public List<User> getUsers() {

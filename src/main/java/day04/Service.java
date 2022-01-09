@@ -28,18 +28,13 @@ public class Service implements WebshopItem{
     }
 
     @Override
-    public void ExtendExpirationDate() {
-
-    }
-
-    @Override
     public WebshopItem copy() {
         return new Service(name,price);
     }
 
     @Override
     public void buy() {
-    this.expirationDate = LocalDate.now().plusYears(1);
+        this.expirationDate = LocalDate.now().plusYears(1);
     }
 
     @Override
